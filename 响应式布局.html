@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>响应式布局</title>
+    <style>
+        body,h2{margin: 0px; padding: 0px; color: white}
+        section#main, header, aside, footer {
+            background:#333;
+            margin: 5px 0;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            -ms-border-radius: 10px;
+            -o-border-radius: 10px;
+            border-radius: 10px;
+        }
+        h2 {
+            text-align: center;
+            font-size: 3em;
+            color: yellow;
+        }
+        section#container{
+            margin: 0 auto;
+            width: 960px;
+        }
+        header{
+            float:left;
+            width: 100%;
+            line-height: 100px;
+        }
+        #left{
+            float: left;
+            width: 200px;
+            line-height: 400px;
+        }
+        section#main{
+            float: left;
+            width: 540px;
+            margin-left: 10px;
+            line-height: 400px;
+        }
+        #right{
+            float: right;
+            width: 200px;
+            line-height: 400px;
+        }
+        footer{
+            float: left;
+            width: 100%;
+            line-height: 80px;
+        }
+
+        /*1000 以上屏幕如何显示*/
+        @media screen and (min-width:1000px){
+            section#main, header, aside, footer {
+                background:#333;
+                margin: 5px 0;
+            }
+            h2 {
+                text-align: center;
+                font-size: 4em;
+                color: red;
+            }
+            section#container{
+                margin: 0 auto;
+                width: 1260px;
+            }
+            header{
+                float:left;
+                width: 100%;
+                line-height: 100px;
+            }
+            /*没有改改变的可以不写，直接继承之前的*/
+            #left{
+                float: left;
+                width: 200px;
+                line-height: 600px;
+            }
+            section#main{
+                float: left;
+                width: 740px;
+                margin-left: 10px;
+                line-height: 600px;
+            }
+            #right{
+                float: right;
+                width: 300px;
+                line-height: 600px;
+            }
+            footer{
+                float: left;
+                width: 100%;
+                line-height: 80px;
+            }
+        }
+
+        /*pad 640~1000*/
+        @media screen and (min-width:640px) and (max-width:1000px) {
+            h2 {
+                font-size: 2.5em;
+                color: green;
+            }
+            section#container {
+                width: 600px;
+            }
+            #left{
+                width: 160px;
+            }
+            section#main{
+                width: 430px;
+            }
+            #right{
+                display: none;
+            }
+        }
+        /*phone 640px lt max-width:639px*/
+        @media screen and (max-width:639px){
+            h2 {
+                font-size: 1.5em;
+                color: blank;
+            }
+            section#container{
+                margin: 0 auto;
+                width: 400px;
+            }
+            #left{
+                float: left;
+                width: 100%;
+                line-height: 100px;
+            }
+            section#main{
+                float: left;
+                width: 100%;
+                line-height: 200px;
+                margin-left: 0px;
+            }
+            #right{
+                float: right;
+                width: 100%;
+                line-height: 100px;
+                display: none;
+            }
+            footer{
+                float: left;
+                width: 100%;
+                line-height: 80px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section id="container">
+        <header>
+            <h2>Header</h2>
+        </header>
+        <aside id="left">
+            <h2>Left</h2>
+        </aside>
+        <section id="main">
+            <h2>Main</h2>
+        </section>
+        <aside id="right">
+            <h2>Right</h2>
+        </aside>
+        <footer><h2>Footer</h2></footer>
+    </section>
+</body>
+</html>
